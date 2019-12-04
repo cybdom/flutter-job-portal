@@ -1,6 +1,13 @@
 # flutter_job_portal
 
-A new Flutter project.
+Original Design: https://cdn.dribbble.com/users/1145170/screenshots/8544212/media/0857b0c376c76571df08eff1af605b0d.mp4
+Tutorial: <a href="https://cybdom.tech/">Cybdom Tech</a>
+
+RESULT
+
+<img src="screenshot1.png">
+<img src="screenshot2.png">
+<img src="screenshot3.png">
 
 ## Getting Started
 
