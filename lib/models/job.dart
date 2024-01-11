@@ -3,10 +3,10 @@ class JobModel {
   final List<String> photos;
 
   JobModel(
-      {this.photos,
-      this.description,
-      this.iconUrl,
-      this.location,
-      this.salary,
-      this.title});
+      {required this.description,
+      required this.iconUrl,
+      required this.location,
+      required this.salary,
+      required this.title,
+      required this.photos});
 }

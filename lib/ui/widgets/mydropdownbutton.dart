@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-class MyDropDownButton extends StatefulWidget {
-  const MyDropDownButton({
-    Key key,
-  }) : super(key: key);
 
+class MyDropDownButton extends StatefulWidget {
   @override
   _MyDropDownButtonState createState() => _MyDropDownButtonState();
 }
@@ -14,9 +11,9 @@ class _MyDropDownButtonState extends State<MyDropDownButton> {
   Widget build(BuildContext context) {
     return DropdownButton(
       underline: Container(),
-      onChanged: (f) => _active = f,
+      onChanged: (f) => _active = f!,
       value: _active,
-      style: Theme.of(context).textTheme.headline,
+      style: Theme.of(context).textTheme.headlineSmall,
       items: [
         DropdownMenuItem(child: Text("Designer Jobs"), value: 0),
         DropdownMenuItem(child: Text("Designer Jobs"), value: 1),

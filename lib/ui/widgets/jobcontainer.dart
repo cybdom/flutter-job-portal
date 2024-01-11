@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+
 class JobContainer extends StatelessWidget {
-  const JobContainer({
-    Key key,
-    @required this.iconUrl,
-    @required this.title,
-    @required this.location,
-    @required this.description,
-    @required this.salary,
-    @required this.onTap,
-  }) : super(key: key);
   final String iconUrl, title, location, description, salary;
-  final Function onTap;
+  final Function() onTap;
+
+  const JobContainer(
+      {super.key,
+      required this.iconUrl,
+      required this.title,
+      required this.location,
+      required this.description,
+      required this.salary,
+      required this.onTap});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -23,7 +24,9 @@ class JobContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(9.0),
           boxShadow: [
             BoxShadow(
-                color: Colors.grey[300], blurRadius: 5.0, offset: Offset(0, 3))
+                color: Colors.grey.shade300,
+                blurRadius: 5.0,
+                offset: Offset(0, 3))
           ],
         ),
         child: Column(
@@ -46,11 +49,11 @@ class JobContainer extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         "$title",
-                        style: Theme.of(context).textTheme.title,
+                        style: Theme.of(context).textTheme.titleLarge,
                       ),
                       Text(
                         "$location",
-                        style: Theme.of(context).textTheme.subtitle.apply(
+                        style: Theme.of(context).textTheme.titleSmall?.apply(
                               color: Colors.grey,
                             ),
                       )
@@ -62,16 +65,20 @@ class JobContainer extends StatelessWidget {
             SizedBox(height: 5),
             Text(
               "$description",
-              style:
-                  Theme.of(context).textTheme.body1.apply(color: Colors.grey),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium
+                  ?.apply(color: Colors.grey),
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 9),
             Text(
               "$salary",
-              style:
-                  Theme.of(context).textTheme.subhead.apply(fontWeightDelta: 2),
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.apply(fontWeightDelta: 2),
             )
           ],
         ),

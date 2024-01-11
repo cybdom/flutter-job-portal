@@ -4,7 +4,8 @@ import 'package:flutter_job_portal/global.dart';
 class DetailsScreen extends StatelessWidget {
   final int id;
 
-  const DetailsScreen({Key key, @required this.id}) : super(key: key);
+  const DetailsScreen({super.key, required this.id});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -74,28 +75,28 @@ class DetailsScreen extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         "${jobList[id].title}",
-                        style: Theme.of(context).textTheme.headline,
+                        style: Theme.of(context).textTheme.headlineSmall,
                       ),
                       Text(
                         "${jobList[id].location}",
                         style: Theme.of(context)
                             .textTheme
-                            .body2
-                            .apply(color: Colors.grey),
+                            .bodyLarge
+                            ?.apply(color: Colors.grey),
                       ),
                       SizedBox(
                         height: 15.0,
                       ),
                       Text(
                         "Overview",
-                        style: Theme.of(context).textTheme.subhead,
+                        style: Theme.of(context).textTheme.titleMedium,
                       ),
                       Text(
                         "${jobList[id].description}",
                         style: Theme.of(context)
                             .textTheme
-                            .body2
-                            .apply(color: Colors.grey),
+                            .bodyLarge
+                            ?.apply(color: Colors.grey),
                         maxLines: 3,
                       ),
                       SizedBox(
@@ -103,7 +104,7 @@ class DetailsScreen extends StatelessWidget {
                       ),
                       Text(
                         "Photos",
-                        style: Theme.of(context).textTheme.subhead,
+                        style: Theme.of(context).textTheme.titleMedium,
                       ),
                       SizedBox(height: 5),
                       Container(
@@ -130,15 +131,17 @@ class DetailsScreen extends StatelessWidget {
                       Container(
                         width: MediaQuery.of(context).size.height * .7,
                         height: 45,
-                        child: RaisedButton(
+                        child: ElevatedButton(
                           child: Text(
                             "Booking Inquiry",
                             style: Theme.of(context)
                                 .textTheme
-                                .button
-                                .apply(color: Colors.white),
+                                .labelLarge
+                                ?.apply(color: Colors.white),
                           ),
-                          color: Colors.blue,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                          ),
                           onPressed: () {},
                         ),
                       )

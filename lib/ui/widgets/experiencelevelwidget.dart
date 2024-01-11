@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ExperienceLevelWidget extends StatefulWidget {
-  const ExperienceLevelWidget({
-    Key key,
-  }) : super(key: key);
-
   @override
   _ExperienceLevelWidgetState createState() => _ExperienceLevelWidgetState();
 }
@@ -30,12 +26,12 @@ class _ExperienceLevelWidgetState extends State<ExperienceLevelWidget> {
               style: _active == 0
                   ? Theme.of(context)
                       .textTheme
-                      .headline
-                      .apply(color: Colors.blue)
+                      .headlineSmall
+                      ?.apply(color: Colors.blue)
                   : Theme.of(context)
                       .textTheme
-                      .subtitle
-                      .apply(color: Colors.grey),
+                      .titleSmall
+                      ?.apply(color: Colors.grey),
             ),
           ),
           GestureDetector(
@@ -49,12 +45,12 @@ class _ExperienceLevelWidgetState extends State<ExperienceLevelWidget> {
               style: _active == 1
                   ? Theme.of(context)
                       .textTheme
-                      .headline
-                      .apply(color: Colors.blue)
+                      .headlineSmall
+                      ?.apply(color: Colors.blue)
                   : Theme.of(context)
                       .textTheme
-                      .subtitle
-                      .apply(color: Colors.grey),
+                      .titleSmall
+                      ?.apply(color: Colors.grey),
             ),
           ),
           GestureDetector(
@@ -68,12 +64,12 @@ class _ExperienceLevelWidgetState extends State<ExperienceLevelWidget> {
               style: _active == 2
                   ? Theme.of(context)
                       .textTheme
-                      .headline
-                      .apply(color: Colors.blue)
+                      .headlineSmall
+                      ?.apply(color: Colors.blue)
                   : Theme.of(context)
                       .textTheme
-                      .subtitle
-                      .apply(color: Colors.grey),
+                      .titleSmall
+                      ?.apply(color: Colors.grey),
             ),
           ),
         ],

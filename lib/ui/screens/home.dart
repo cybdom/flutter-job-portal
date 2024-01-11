@@ -5,7 +5,7 @@ import 'package:flutter_job_portal/ui/screens/screens.dart';
 import 'package:flutter_job_portal/ui/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget{
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -37,7 +37,8 @@ class HomeScreen extends StatelessWidget{
                           onPressed: () {},
                         ),
                         CircleAvatar(
-                          backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2017/06/09/07/37/notebook-2386034_960_720.jpg"),
+                          backgroundImage: NetworkImage(
+                              "https://cdn.pixabay.com/photo/2017/06/09/07/37/notebook-2386034_960_720.jpg"),
                         )
                       ],
                     ),
@@ -70,7 +71,8 @@ class HomeScreen extends StatelessWidget{
                             child: IconButton(
                               icon: Icon(Icons.tune),
                               onPressed: () {
-                                Provider.of<MyBottomSheetModel>(context)
+                                Provider.of<MyBottomSheetModel>(context,
+                                        listen: false)
                                     .changeState();
                               },
                             ),
@@ -112,7 +114,7 @@ class HomeScreen extends StatelessWidget{
               height: 60,
               child: MyBottomNavBar(),
             ),
-            Provider.of<MyBottomSheetModel>(context).visible 
+            Provider.of<MyBottomSheetModel>(context).visible
                 ? Positioned(
                     bottom: 0,
                     left: 0,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_job_portal/models/bottomsheet.dart';
 import 'package:flutter_job_portal/ui/widgets/experiencelevelwidget.dart';
 import 'package:provider/provider.dart';
+
 class MyBottomSheet extends StatefulWidget {
   @override
   _MyBottomSheetState createState() => _MyBottomSheetState();
@@ -12,7 +13,7 @@ class JobTypes {
   bool checked;
   final int count;
 
-  JobTypes({this.title, this.checked, this.count});
+  JobTypes({required this.checked, required this.title, required this.count});
 }
 
 class _MyBottomSheetState extends State<MyBottomSheet> {
@@ -40,7 +41,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
         children: <Widget>[
           Text(
             "Salary Estimate",
-            style: Theme.of(context).textTheme.title,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
           RangeSlider(
             min: 0,
@@ -56,7 +57,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
           ),
           Text(
             "Job Type",
-            style: Theme.of(context).textTheme.title,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
           GridView.count(
             shrinkWrap: true,
@@ -71,7 +72,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                       value: jobTypes[i].checked,
                       onChanged: (value) {
                         setState(() {
-                          jobTypes[i].checked = value;
+                          jobTypes[i].checked = value!;
                         });
                       },
                     ),
@@ -83,24 +84,26 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
           ),
           Text(
             "Experience Level",
-            style: Theme.of(context).textTheme.title,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
           ExperienceLevelWidget(),
           Container(
             height: 40,
             width: double.infinity,
             margin: EdgeInsets.symmetric(horizontal: 25.0),
-            child: RaisedButton(
-              color: Colors.blue,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+              ),
               child: Text(
                 "Submit",
                 style: Theme.of(context)
                     .textTheme
-                    .button
-                    .apply(color: Colors.white),
+                    .labelLarge
+                    ?.apply(color: Colors.white),
               ),
-              onPressed: () => Provider.of<MyBottomSheetModel>(context)
-                                    .changeState(),
+              onPressed: () =>
+                  Provider.of<MyBottomSheetModel>(context).changeState(),
             ),
           )
         ],
